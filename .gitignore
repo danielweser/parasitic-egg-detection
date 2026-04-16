@@ -1,0 +1,36 @@
+# --- Python & Environments ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# --- Data & Annotations ---
+# Do not commit raw zips, processed images, or YOLO labels
+data/
+src/data/
+*.zip
+*.ndjson
+*.json
+
+# --- Models & Experiments ---
+# Do not commit heavy PyTorch weights or training run outputs
+experiments/
+runs/
+*.pt
+*.pth
+
+# --- Secrets & Credentials (CRITICAL) ---
+.email_creds
+.runpod_key
+
+# --- OS Generated Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

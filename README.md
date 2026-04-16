@@ -2,7 +2,7 @@
 
 An end-to-end computer vision pipeline for the domain-robust detection and classification of parasitic diseases in highly heterogeneous microscopy images. 
 
-## 📌 Executive Summary
+## Executive Summary
 Diagnosis of STH infections relies heavily on manual microscopic examination, which is bottlenecked by a scarcity of trained microscopists in endemic regions. This project implements a fully automated **Data Engineering and MLOps pipeline** to train YOLO-based detection models on the Chula-ParasiteEgg-11 dataset. 
 
 **Key engineering highlights:**
@@ -10,7 +10,7 @@ Diagnosis of STH infections relies heavily on manual microscopic examination, wh
 * **Clinical Data Integrity:** Implemented custom "letterboxing" algorithms to preserve the aspect ratio of highly variable microscopy images without distorting the biological morphology of the eggs.
 * **Cloud-Native Training:** Containerized execution designed for RunPod, featuring automated GPU detection, Tensor Core utilization, epoch-time tracking, email notifications, and auto-termination to optimize cloud compute costs.
 
-## 🛠 Architecture & Workflow
+## Architecture & Workflow
 
 ### 1. Data Ingestion & Preprocessing (`src/build_dataset.py`)
 Microscopy datasets are notoriously unstructured. This script standardizes the data:
@@ -24,7 +24,7 @@ A production-ready training script utilizing Ultralytics YOLO:
 - **Hardware Optimization:** Dynamically enables high precision matrix multiplication if Tensor Cores are available.
 - **Cost Management:** Integrates with the RunPod API to automatically terminate the pod upon training completion, accompanied by automated email alerts detailing fitness and epoch metrics.
 
-## 🚀 Setup & Execution
+## Setup & Execution
 
 **1. Environment Setup**
 ```bash
@@ -47,13 +47,13 @@ Ensure your `RUNPOD_POD_ID` and `.runpod_key` are set in your environment if uti
 python src/train.py
 ```
 
-## 📊 Dataset
+## Dataset
 The primary dataset is the **Chula-ParasiteEgg-11** challenge dataset (~13,200 microscopy images, 11 species). The pipeline automatically handles downloading this from the HuggingFace Hub. *(Note: Raw and processed data are heavily `.gitignore`d to keep the repository lightweight).*
 
-## 🤝 Acknowledgements & Attribution
+## Acknowledgements & Attribution
 This pipeline was developed as part of a collaborative research effort. 
 * **Data Engineering & MLOps Pipeline:** Architected by Daniel Weser (this repository).
 * **Original R-CNN Baseline & Model Exploration:** Developed in collaboration with [Darren King](https://github.com/darrenaking/sth-egg-detection.git).
 
-## 📄 License
+## License
 This project is licensed under the **MIT License**.
